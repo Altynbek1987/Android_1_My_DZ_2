@@ -2,6 +2,7 @@ package com.example.android_1_my_dz_2;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -154,5 +155,11 @@ public class MainActivity extends AppCompatActivity {
         result.setText(firstValues + "/" + secondValues + "=" + result_op);
     }
 
+    public void onSaveClick(View view) {
+        Intent intent = new Intent();
+        intent.putExtra("result", result.getText().toString());
+        setResult(RESULT_OK,intent);
+        finish();
     }
+}
 
